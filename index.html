@@ -4,30 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Dia-02/primeraApp-Semillero/styles.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        <h2>Nombres</h2>
-        <input v-model="nombre" type="text">
-        <h2>Apellidos</h2>
-        <input v-model="apellido" type="text">
-        <h2>Usuario</h2>
-        <input v-model="usuario" type="text">
-        <h2>Fecha de nacimiento</h2>
-        <h4>Año (aaaa)</h4><input v-model.number="año" placeholder="año">
-        <h4>Mes (mm)</h4><input v-model.number="mes" placeholder="mes">
-        <h4>Dia (dd)</h4><input v-model.number="dia" placeholder="dia">
-        <button id="botonGuardar" @click="edad">Calcular Edad</button>
-        <button @click="guardar">guardar</button>
-        <h1 v-text='rta'></h1>
-
-        <!-- <ul>
-            <li v-for="(dato, indice) in datos">
-                {{indice}} : {{dato.nombre}} = {{dato.usuario}}
-            </li>
-        </ul> -->
-    </div>
+    <section class="d-flex justify-content-center">
+        <div class="card col-sm-6 p-3" id="app">
+            <h2>Nombres</h2>
+            <input v-model="nombre" type="text">
+            <h2>Apellidos</h2>
+            <input v-model="apellido" type="text">
+            <h2>Usuario</h2>
+            <input v-model="usuario" type="text">
+            <h2>Fecha de nacimiento</h2>
+            <div>
+                <h4>Año (aaaa)</h4><input v-model.number="año" placeholder="año">
+                <h4>Mes (mm)</h4><input v-model.number="mes" placeholder="mes">
+                <h4>Dia (dd)</h4><input v-model.number="dia" placeholder="dia">
+            </div>
+            <p></p>
+            <div>
+                <button class="btn btn-primary mb-3" id="botonGuardar" @click="edad">Calcular edad</button>
+            </div>
+            <div>
+                <button class="btn btn-success mb-3" @click="guardar">guardar</button>
+            </div>
+            
+            <h1 v-text='rta'></h1>
+    
+            <!-- <h1 v-for="item of datos">
+                aqui - {{item.Nombre}} - {{item.Usuario}}
+            </h1> -->
+        </div>
+        
+    </section>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script src="/Dia-02/primeraApp-Semillero/main.js"></script>

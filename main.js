@@ -21,10 +21,25 @@ var app = new Vue({
                 Usuario : this.usuario,
                 Clave : Math.random().toString(36).substring(0,503)
             });
-            // if(this.usuario == "Juan"){
-            //     alert("Usuario repetido")
-            // }
-            console.log(this.datos);
+            
+            for( prop in this.datos){
+                
+                // if(prop > 0){
+                //     if(this.datos.Usuario == this.datos[prop].Usuario){
+                //         alert("Usuario repetido")
+                //     }
+                // }
+                console.log("//----------------//");    
+                console.log("Nombre: "+this.datos[prop].Nombre);
+                console.log("Apellido: "+this.datos[prop].Apellido);
+                console.log("Usuario: "+this.datos[prop].Usuario);
+                console.log("Clave: "+this.datos[prop].Clave);
+                console.log("//----------------//"); 
+                console.log(datos.length)
+                
+            }
+            
+            
             this.nombre = '';
             this.apellido = '';
             this.usuario = '';
@@ -70,7 +85,10 @@ var app = new Vue({
                     if(this.dia <= 25){
                         this.rta =  "Su edad es de : " + (2023 - this.año) + " año(s)"
                     }
-                } else {
+                } if (this.año === 0 || this.mes === 0 || this.dia ===0){
+                    alert("Datos incompletos, por favor complete los datos requeridos")
+                }
+                else {
                     this.rta =  "Su edad es de : " + (2023 - this.año - 1) + "año(s)"
                 }
             }
