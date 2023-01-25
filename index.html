@@ -9,14 +9,24 @@
 <body>
     <div id="app">
         <h2>Nombres</h2>
-        <input type="text">
+        <input v-model="nombre" type="text">
         <h2>Apellidos</h2>
-        <input type="text">
+        <input v-model="apellido" type="text">
         <h2>Usuario</h2>
-        <input type="text">
+        <input v-model="usuario" type="text">
         <h2>Fecha de nacimiento</h2>
-        <input type="date" id="fechaNacimiento">
-        <button @click="edad">Guardar</button>
+        <h4>Año (aaaa)</h4><input v-model.number="año" placeholder="año">
+        <h4>Mes (mm)</h4><input v-model.number="mes" placeholder="mes">
+        <h4>Dia (dd)</h4><input v-model.number="dia" placeholder="dia">
+        <button id="botonGuardar" @click="edad">Calcular Edad</button>
+        <button @click="guardar">guardar</button>
+        <h1 v-text='rta'></h1>
+
+        <!-- <ul>
+            <li v-for="(dato, indice) in datos">
+                {{indice}} : {{dato.nombre}} = {{dato.usuario}}
+            </li>
+        </ul> -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
